@@ -20,4 +20,5 @@ body {
 
 #text {
 	width: min(100% - 2rem, 400px);
+	margin-inline: auto;
 }
