@@ -22,4 +22,5 @@ body {
 	height: min(100% - 2rem, 10000px);
 	width: min(100% - 2rem, 10000px);
 	margin-inline: auto;
+	text-align: start;
 }
