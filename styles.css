@@ -19,6 +19,7 @@ body {
 }
 
 #text {
-	width: min(100% - 2rem, 4000px);
+	height: max-content;
+	width: min(100% - 2rem, 600px);
 	margin-inline: auto;
 }
