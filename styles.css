@@ -19,5 +19,5 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: calc(var(--gap) / 4);
+	gap: calc(var(--gap) / 2);
 }
