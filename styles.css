@@ -19,6 +19,6 @@ body {
 }
 
 #text {
-	width: min(100% - 2rem, 400px);
+	width: min(100% - 2rem, 4000px);
 	margin-inline: auto;
 }
