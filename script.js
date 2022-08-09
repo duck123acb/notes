@@ -8,9 +8,10 @@ function download() {
 
 function upload() {
     let fr = new FileReader();
-	fr.addEventListener('load', (event) => {
+    fr.addEventListener('load', (event) => {
     	textbox.value = event.target.result;
-  	});
+    });
+    fr.readAsText(uploadBtn.files[0]);
 }
 
 uploadBtn.addEventListener("change", function () {
