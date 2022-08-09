@@ -12,7 +12,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	gap: 20px;
+	gap: var(--gap);
 }
 
 #file-management {
