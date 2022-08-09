@@ -19,7 +19,7 @@ body {
 }
 
 #text {
-	height: min(100% - 2rem, 800px);
-	width: min(100% - 2rem, 600px);
+	height: min(100% - 2rem, 10000px);
+	width: min(100% - 2rem, 10000px);
 	margin-inline: auto;
 }
