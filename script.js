@@ -15,15 +15,6 @@ function upload() {
     fr.readAsText(uploadBtn.files[0]);
 }
 
-// uploadBtn.addEventListener("change", function () {
-// 	upload();
-// });
-
-// downloadBtn.addEventListener("click", function() {
-// 	download();
-// });
-
-
 uploadBtn.addEventListener("change", upload);
 
 downloadBtn.addEventListener("click", download);
