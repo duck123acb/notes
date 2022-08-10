@@ -27,5 +27,7 @@ body {
 }
 
 .bold {
-	font-weight: bolder;
+	font-weight: bold;
+	color: red;
+	font-size: large;
 }
