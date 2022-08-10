@@ -31,3 +31,10 @@ body {
 	color: red;
 	font-size: large;
 }
+
+.file-extention {
+	color: white;
+	font-family: 'Courier New', Courier, monospace;
+	background-color: gray;
+	border-radius: .2rem;
+}
