@@ -25,3 +25,7 @@ body {
 	vertical-align: top;
   	text-align: left;
 }
+
+.bold {
+	font-weight: bolder;
+}
