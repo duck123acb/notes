@@ -1,4 +1,4 @@
-*, *::backdrop, *::after {
+*, *::before, *::after {
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -24,6 +24,9 @@ body {
 	margin-inline: auto;
 	vertical-align: top;
   	text-align: left;
+	border: 1px black solid;
+	border-radius: .5rem;
+	padding: 5px;
 }
 
 .bold {
