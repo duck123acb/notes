@@ -3,7 +3,7 @@
 }
 
 body {
-	height: 95vh;
+	min-height: 95vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -19,7 +19,7 @@ body {
 }
 
 #text {
-	height: min(100% - 20rem, 10000px);
+	min-height: 20rem;
 	width: min(100% - 4rem, 10000px);
 	margin-inline: auto;
 	vertical-align: top;
