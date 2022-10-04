@@ -1,8 +1,33 @@
 const textbox = document.getElementById("text");
 const downloadBtn = document.getElementById("download");
 const uploadBtn = document.getElementById("upload");
+const underlineBtn = document.getElementById("underline");
 
+// setup
 textbox.contentEditable = true;
+const spaceNode = document.createElement("span");
+spaceNode.style.display = "inline-block";
+//spaceNode.innerText = "&nbsp;";
+spaceNode.innerText = "\xa0";
+/*
+function select() {
+	let selection = window.getSelection().getRangeAt(0);
+        let selectedText = selection.extractContents();
+        let span = document.createElement("span");
+        span.style.backgroundColor = "yellow";
+        span.appendChild(selectedText);
+        selection.insertNode(span);
+}
+*/
+function underline() {
+	let selection = window.getSelection().getRangeAt(0);
+        let selectedText = selection.extractContents();
+        let span = document.createElement("span");
+        span.style.textDecoration = "underline";
+        span.appendChild(selectedText);
+        selection.insertNode(span);
+	text.append(spaceNode);
+}
 
 function download() {
 	let notesFile = new File([textbox.innerText], "notes.txt", {type: "text/plain;charset=utf-8"});
@@ -14,12 +39,11 @@ function upload() {
 	fr.addEventListener('load', (event) => {
 		console.log(event.target.result)
     		textbox.innerText = event.target.result;
-		//textbox.innerText = "your mom"
   	});
 	fr.readAsText(uploadBtn.files[0]);
 }
-
-function getSelectionText() {
+/*
+function getSelectionText() 
     	var text = "";
     	var activeEl = document.activeElement;
     	var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
@@ -31,12 +55,24 @@ function getSelectionText() {
     	}
     	return text; // will be undefined if not in textbox
 }
-
+*/
 uploadBtn.addEventListener("change", upload);
 downloadBtn.addEventListener("click", download);
+underlineBtn.addEventListener("click", underline);
+//text.addEventListener("DOMSubtreeModified", function() {
+//	text.appendChild(spaceNode);
+//});
+/*
 document.addEventListener("selectionchange", function() {
-	console.log(getSelectionText());
-});
+	//console.log(getSelectionText());
+
+	let selection = window.getSelection().getRangeAt(0);
+	let selectedText = selection.extractContents();
+	let span = document.createElement("span");
+	span.style.backgroundColor = "yellow";
+	span.appendChild(selectedText);
+	selection.insertNode(span);
+});*/
 
 window.addEventListener("beforeunload", function (e) {
     var confirmationMessage = 'It looks like you have been editing something. '
