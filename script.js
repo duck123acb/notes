@@ -157,10 +157,8 @@ function download() {
 function upload() {
 	let fr = new FileReader();
 	fr.addEventListener('load', (event) => {
-		// console.log(event.target.result)
-		// let cleanStr = event.target.result;
-		// cleanStr = cleanStr.replace(/(<([^>]+)>)/gi, "");
-    	textbox.innerHTML = event.target.result.replace("<", "");
+		console.log(event.target.result)
+    		textbox.innerHTML = event.target.result;
   	});
 	fr.readAsText(uploadBtn.files[0]);
 }
