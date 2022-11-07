@@ -31,7 +31,8 @@ function underline() {
 
 function download() {
 	let notesFile = new File([textbox.innerText], "notes.txt", {type: "text/plain;charset=utf-8"});
-	saveAs(notesFile);
+	// saveAs(notesFile);
+	saveAs(new File([serializeToString(textbox.innerHTML)], {type:"text/plain;charset=utf-8"}), "hi.xhtml")
 }
 
 function upload() {
