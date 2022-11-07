@@ -39,7 +39,7 @@ function upload() {
 	let fr = new FileReader();
 	fr.addEventListener('load', (event) => {
 		console.log(event.target.result)
-    		textbox.innerText = event.target.result;
+    		textbox.innerHTML = event.target.result;
   	});
 	fr.readAsText(uploadBtn.files[0]);
 }
