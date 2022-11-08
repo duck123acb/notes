@@ -29,9 +29,8 @@ function underline() {
 	text.append(spaceNode);
 }
 
-function download() {
-
-	saveAs(new File([textbox.innerHTML], {type:"text/plain;charset=utf-8"}), "hi.xhtml")
+function download(name) {
+	saveAs(new File([textbox.innerHTML], {type:"text/plain;charset=utf-8"}), `${name}.xhtml`)
 }
 
 function upload() {
