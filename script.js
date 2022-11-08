@@ -30,8 +30,7 @@ function underline() {
 }
 
 function download() {
-	let notesFile = new File([textbox.innerText], "notes.txt", {type: "text/plain;charset=utf-8"});
-	// saveAs(notesFile);
+
 	saveAs(new File([textbox.innerHTML], {type:"text/plain;charset=utf-8"}), "hi.xhtml")
 }
 
