@@ -150,8 +150,14 @@ function underline() {
 }
 
 function download() {
+<<<<<<< HEAD
 
 	saveAs(new File([textbox.innerHTML], {type:"text/plain;charset=utf-8"}), "notes.xhtml")
+=======
+	let notesFile = new File([textbox.innerText], "notes.txt", {type: "text/plain;charset=utf-8"});
+	// saveAs(notesFile);
+	saveAs(new File([textbox.innerHTML], {type:"text/plain;charset=utf-8"}), "hi.xhtml")
+>>>>>>> parent of 22771e0 (no more useless vars)
 }
 
 function upload() {
