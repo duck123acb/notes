@@ -6,7 +6,7 @@ const uploadBtn = document.getElementById("upload");
 textbox.contentEditable = true;
 
 function download() {
-	saveAs(new File([textbox.innerHTML], {type:"text/plain;charset=utf-8"}), "notes.xhtml")
+	saveAs(new File([textbox.innerHTML], {type:"text/plain;charset=utf-8"}), "notes.ducknote")
 }
 
 function upload() {
