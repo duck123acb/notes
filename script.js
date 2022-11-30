@@ -19,7 +19,6 @@ function upload() {
 
 uploadBtn.addEventListener("change", upload);
 downloadBtn.addEventListener("click", download);
-underlineBtn.addEventListener("click", underline);
 addEventListener("beforeunload", function (e) {
     const confirmationMessage = 'It looks like you have been editing something. ' + 'If you leave before saving, your changes will be lost.';
 
