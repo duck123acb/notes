@@ -29,6 +29,10 @@ body {
 	padding: 5px;
 }
 
+.info {
+	font-size: 1.2vw;
+}
+
 .bold {
 	font-weight: bold;
 	color: red;
