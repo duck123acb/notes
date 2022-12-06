@@ -9,14 +9,14 @@ function getCursorPosition() {
 };
 
 function download() {
-	saveAs(new File([textbox.value], {type:"text/plain;charset=utf-8"}), "notes.ducknote")
+	saveAs(new File([textbox.value], { type: "text/plain;charset=utf-8" }), "notes.ducknote")
 }
 
 function upload() {
 	let fr = new FileReader();
 	fr.addEventListener('load', (event) => {
 		textbox.value = event.target.result;
-  	});
+	});
 	fr.readAsText(uploadBtn.files[0]);
 }
 
@@ -69,12 +69,12 @@ function calculate() {
 			calculation = numberOne / numberTwo;
 			break;
 
-		case "**":
+		case "^":
 			calculation = numberOne ** numberTwo;
 			break;
 
-		case "//":
-			calculation = Math.sqrt(numberOne,  numberTwo);
+		case "/^":
+			calculation = Math.pow(numberOne, 1/numberTwo); // sqrt
 			break;
 
 		default:
@@ -89,8 +89,8 @@ function calculate() {
 
 uploadBtn.addEventListener("change", upload);
 downloadBtn.addEventListener("click", download);
-textbox.addEventListener("keydown", function(event) {
-	console.log(event.key);	
+textbox.addEventListener("keydown", function (event) {
+	console.log(event.key);
 	if (event.key === "Tab") {
 		event.preventDefault();
 		insertTab();
@@ -98,12 +98,12 @@ textbox.addEventListener("keydown", function(event) {
 	if (event.key === "Alt") isAltDown = true;
 	if (event.key === "c" && isAltDown) calculate();
 });
-textbox.addEventListener("keyup", function(event) {
+textbox.addEventListener("keyup", function (event) {
 	if (event.key === "Alt") isAltDown = false;
 });
-addEventListener("beforeunload", function(event) {
-    const confirmationMessage = 'It looks like you have been editing something. ' + 'If you leave before saving, your changes will be lost.';
+addEventListener("beforeunload", function (event) {
+	const confirmationMessage = 'It looks like you have been editing something. ' + 'If you leave before saving, your changes will be lost.';
 
-    (event || window.event).returnValue = confirmationMessage; //Gecko + IE
-    return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+	(event || window.event).returnValue = confirmationMessage; //Gecko + IE
+	return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
 });
