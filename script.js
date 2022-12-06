@@ -90,13 +90,13 @@ function calculate() {
 uploadBtn.addEventListener("change", upload);
 downloadBtn.addEventListener("click", download);
 textbox.addEventListener("keydown", function(event) {
-	console.log(event.key);
+	console.log(event.key);	
 	if (event.key === "Tab") {
 		event.preventDefault();
 		insertTab();
 	}
 	if (event.key === "Alt") isAltDown = true;
-	if (event.key === "c" && isAltDown === true) calculate();
+	if (event.key === "c" && isAltDown) calculate();
 });
 textbox.addEventListener("keyup", function(event) {
 	if (event.key === "Alt") isAltDown = false;
