@@ -33,19 +33,21 @@ function calculate() {
 	try {
 		numberOne = parseFloat(numberOneString); // does a weird thing where if there is a string behind the number, it will shave that string off
 		numberTwo = parseFloat(numberTwoString);
+
+		if (numberOne === NaN || numberTwo === NaN) {
+			alert("Please enter in a correct statement, if you need help, please review the calculations help");
+			return;
+		}
+		if (numberOne === undefined || numberTwo === undefined || operand === undefined) {
+			alert("Please enter in a correct statement, if you need help, please review the calculations help");
+			return;
+		}
+	
 	} catch (error) {
 		alert("Please enter in a correct statement, if you need help, please review the calculations help");
 		return;
 	}
 
-	if (numberOne === NaN || numberTwo === NaN) {
-		alert("Please enter in a correct statement, if you need help, please review the calculations help");
-		return;
-	}
-	if (numberOne === undefined || numberTwo === undefined || operand === undefined) {
-		alert("Please enter in a correct statement, if you need help, please review the calculations help");
-		return;
-	}
 
 	let calculation = 0;
 
