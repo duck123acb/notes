@@ -51,8 +51,6 @@ function calculate() {
 
 	let calculation = 0;
 
-	console.log(numberOne, numberTwo, operand)
-
 	switch (operand) {
 		case "+":
 			calculation = numberOne + numberTwo;
@@ -96,9 +94,9 @@ textbox.addEventListener("keydown", function(event) {
 		insertTab();
 	}
 });
-// addEventListener("beforeunload", function(event) {
-//     const confirmationMessage = 'It looks like you have been editing something. ' + 'If you leave before saving, your changes will be lost.';
+addEventListener("beforeunload", function(event) {
+    const confirmationMessage = 'It looks like you have been editing something. ' + 'If you leave before saving, your changes will be lost.';
 
-//     (event || window.event).returnValue = confirmationMessage; //Gecko + IE
-//     return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
-// });
+    (event || window.event).returnValue = confirmationMessage; //Gecko + IE
+    return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+});
