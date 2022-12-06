@@ -11,6 +11,11 @@ body {
 	gap: 40px;
 }
 
+li {
+	margin-bottom: 1rem;
+	font-size: 3vh;
+}
+
 #file-management {
 	display: flex;
 	justify-content: center;
@@ -45,4 +50,8 @@ body {
 	font-family: 'Courier New', Courier, monospace;
 	background-color: gray;
 	border-radius: .2rem;
+}
+
+.calculation-help {
+	justify-content: flex-start;
 }
