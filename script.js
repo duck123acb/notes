@@ -2,6 +2,8 @@ const textbox = document.getElementById("text");
 const downloadBtn = document.getElementById("download");
 const uploadBtn = document.getElementById("upload");
 
+let isAltDown = false;
+
 function getCursorPosition() {
 	return [textbox.selectionStart, textbox.selectionEnd];
 };
@@ -42,7 +44,6 @@ function calculate() {
 			alert("Please enter in a correct statement, if you need help, please review the calculations help");
 			return;
 		}
-	
 	} catch (error) {
 		alert("Please enter in a correct statement, if you need help, please review the calculations help");
 		return;
@@ -75,7 +76,7 @@ function calculate() {
 		case "//":
 			calculation = Math.sqrt(numberOne,  numberTwo);
 			break;
-	
+
 		default:
 			alert("Please enter in a correct statement, if you need help, please review the calculations help");
 			return;
@@ -89,10 +90,16 @@ function calculate() {
 uploadBtn.addEventListener("change", upload);
 downloadBtn.addEventListener("click", download);
 textbox.addEventListener("keydown", function(event) {
+	console.log(event.key);
 	if (event.key === "Tab") {
 		event.preventDefault();
 		insertTab();
 	}
+	if (event.key === "Alt") isAltDown = true;
+	if (event.key === "c" && isAltDown === true) calculate();
+});
+textbox.addEventListener("keyup", function(event) {
+	if (event.key === "Alt") isAltDown = false;
 });
 addEventListener("beforeunload", function(event) {
     const confirmationMessage = 'It looks like you have been editing something. ' + 'If you leave before saving, your changes will be lost.';
