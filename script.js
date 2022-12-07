@@ -111,9 +111,11 @@ textbox.addEventListener("keydown", function (event) {
 textbox.addEventListener("keyup", function (event) {
 	if (event.key === "Alt") isAltDown = false;
 });
+addEventListener("focus", function() {
+	isAltDown = false;
+});
 addEventListener("beforeunload", function (event) {
 	const confirmationMessage = 'It looks like you have been editing something. ' + 'If you leave before saving, your changes will be lost.';
-
 	(event || window.event).returnValue = confirmationMessage; //Gecko + IE
 	return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
 });
