@@ -33,8 +33,19 @@ function calculate() {
 
 	// TODO: something is going wrong with the checking for NaN
 	try {
-		numberOne = parseFloat(numberOneString); // does a weird thing where if there is a string behind the number, it will shave that string off
-		numberTwo = parseFloat(numberTwoString);
+		if (numberOneString === "pi" && numberTwoString !== "pi") {
+			numberOne = Math.PI;
+			numberTwo = parseFloat(numberTwoString);
+		} else if (numberOneString !== "pi" && numberTwoString === "pi") {
+			numberOne = parseFloat(numberOneString);
+			numberTwo = Math.PI;
+		} else if (numberOneString === "pi" && numberTwoString === "pi") {
+                        numberOne = Math.PI;
+                        numberTwo = Math.PI;
+                } else {
+			numberOne = parseFloat(numberOneString); // does a weird thing where if there is a string behind the number, it will shave that string off
+			numberTwo = parseFloat(numberTwoString);
+		}
 
 		if (numberOne === NaN || numberTwo === NaN) {
 			alert("Please enter in a correct statement, if you need help, please review the calculations help");
@@ -60,7 +71,7 @@ function calculate() {
 		case "-":
 			calculation = numberOne - numberTwo;
 			break;
-
+		case "x":
 		case "*":
 			calculation = numberOne * numberTwo;
 			break;
@@ -90,7 +101,6 @@ function calculate() {
 uploadBtn.addEventListener("change", upload);
 downloadBtn.addEventListener("click", download);
 textbox.addEventListener("keydown", function (event) {
-	console.log(event.key);
 	if (event.key === "Tab") {
 		event.preventDefault();
 		insertTab();
