@@ -2,7 +2,7 @@ const textbox = document.getElementById("text");
 const downloadBtn = document.getElementById("download");
 const uploadBtn = document.getElementById("upload");
 
-let isAltDown = false;
+let isAltDown = false; //TODO: need new key becuase on mac alt + c produces ç AAAAHAHAHAHWHAHAAAAAAAAAAAAaAAAAAaAAAAAaAAAAAaAAAAAaAAAAAaAAAAAaAAAAAa
 
 function getCursorPosition() {
 	return [textbox.selectionStart, textbox.selectionEnd];
