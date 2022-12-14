@@ -31,7 +31,6 @@ function calculate() {
 	const [numberOneString, operand, numberTwoString] = selectedText.split(" ");
 	let numberOne, numberTwo;
 
-	// TODO: something is going wrong with the checking for NaN
 	try {
 		if (numberOneString === "pi" && numberTwoString !== "pi") {
 			numberOne = Math.PI;
@@ -98,6 +97,14 @@ function calculate() {
 	textbox.setRangeText(` = ${calculation}`, startPosition, endPosition, "end");
 }
 
+function replace() {
+	let text = textbox.value;
+	const replacee = prompt("What text do you want to replace?", "");
+	const replacer = prompt("What do you want to replace that text with?", "");
+	text = text.replaceAll(replacee, replacer);
+	textbox.value = text;
+}
+
 uploadBtn.addEventListener("change", upload);
 downloadBtn.addEventListener("click", download);
 textbox.addEventListener("keydown", function (event) {
@@ -107,9 +114,11 @@ textbox.addEventListener("keydown", function (event) {
 	}
 	if (event.key === "Alt") isAltDown = true;
 	if (event.key === "c" && isAltDown) calculate();
+	if (event.key === "r" && isAltDown) replace();
 });
 textbox.addEventListener("keyup", function (event) {
 	if (event.key === "Alt") isAltDown = false;
+
 });
 addEventListener("focus", function() {
 	isAltDown = false;
