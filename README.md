@@ -6,3 +6,10 @@ Deploys from Netlify
 
 ## link to site: https://ducknotes.netlify.app/
 ## licence: https://github.com/duck123acb/notes/blob/main/LICENSE
+
+
+# TODOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO:
+- bootin up my pc
+- cause i need me
+- download filesaver.js (CREDIT)
+- the forinet battle pass
