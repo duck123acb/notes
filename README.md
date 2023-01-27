@@ -9,7 +9,6 @@ Deploys from Netlify
 
 
 # TODOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO:
-- bootin up my pc
-- cause i need me
 - download filesaver.js (CREDIT)
-- the forinet battle pass
+- setup room/ lobby with password
+- when inset text, save value to server and update other clients in the room 
